@@ -3,6 +3,19 @@
 #include <stdio.h>
 #include "tree.h"
 
+// ----------------------------------------- Example in main ---------------------------------------------
+//          Initial Tree                                Tree After Deletion of Node with Value 2
+//               6                                                        6
+//              / \                                                      / \
+//             2   8                                                    3   8
+//            / \                                                      / \
+//           1   5                                                    1   5
+//              /                                                        / 
+//             3                                                        4
+//              \
+//               4
+// -------------------------------------------------------------------------------------------------------
+
 
 int main() {
 
@@ -12,16 +25,17 @@ int main() {
     Insert(&tree, 2);
     Insert(&tree, 8);
     Insert(&tree, 1);
-    Insert(&tree, 4);
+    Insert(&tree, 5);
     Insert(&tree, 3);
-
+    Insert(&tree, 4);
     printf("Binary Search Tree\n");
     PrintTree(tree);
 
-    Position position = NULL;
-    position = calloc(1, sizeof(*position));
-    Find(&position, tree, 2);
-    printf("Find: position->value = %d\n", position->value);
+    printf("------------------------\n");
+
+    printf("Binary Search Tree After Deletion of Node With Value 2\n");
+    Delete(&tree, 2);
+    PrintTree(tree);
 
     FreeTree(tree);
     return 0;

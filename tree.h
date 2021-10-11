@@ -15,7 +15,8 @@ typedef struct Node* Position;
 void CreateTree(Tree *tree, int value);
 void Insert(Tree *tree, int value);
 void Delete(Tree *tree, int value);
-void Find(Position *position, Tree tree, int value);
+void Find(Position *parent, Position *child, Tree tree, int value);
+void FindMin(Position *parent, Position *child, Tree tree);
 void PrintTree(Tree tree);
 void FreeTree(Tree tree);
 
